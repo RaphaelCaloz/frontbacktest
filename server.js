@@ -54,6 +54,8 @@ app.get('/api/psql/comicViews/:comicId', (req, res) => {
             numViews = psqlRes.rows[0].comic_views
         }
 
+        client.end()
+        
         res.json({
             comicViews: numViews
         })
